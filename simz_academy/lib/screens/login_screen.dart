@@ -141,59 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 //login button
                 SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () async {
-                    setState(() {
-                      submitted = true;
-                    });
-                    final sm = ScaffoldMessenger.of(context);
-                    List condition = LoginValidator(
-                        context,
-                        emailController,
-                        _passwordController,);
-                    //print(emailController.text);
-                    //print(_passwordController.text);
-                    //print(condition.length);
-                    //print(condition);
-                    if (condition.isEmpty) {
-                      //print("Entered IF condition");
-                      try {
-                        final authResponse = await supabase.auth.signInWithPassword(
-                          email: emailController.text,
-                          password: _passwordController.text,
-                        );
-                      sm.showSnackBar(SnackBar(
-                        content:
-                            Text('Logged In: ${authResponse.user!.email!}'),
-                      ));
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) {
-                        return BottomNav();
-
-                      }));
-                      }
-                      catch (error) {
-                        sm.showSnackBar(SnackBar(content: Text('Error: $error')));
-                        print(error);
-                      }
-                    } else {
-                      sm.showSnackBar(SnackBar(
-                        content: Text('Please Correct the following mistakes: \n${condition.toString().replaceAll('[', '').replaceAll(']', '').replaceAll(', ', '\n')}'),
-                      ));
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 4,
-                    shadowColor: Color.fromRGBO(137, 60, 162, 1),
-                    backgroundColor: Color.fromRGBO(137, 60, 162, 1),
-                    minimumSize: Size(double.infinity, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: (submitted)?CircularProgressIndicator():HomeUiHelper().customText(
-                      'Login', 20, FontWeight.w600, Color(0xFFFFFFFF)),
-                ),
+                
 
                 //Navigate to Sign up
                 SizedBox(height: 25),
