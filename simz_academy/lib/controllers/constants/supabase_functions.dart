@@ -6,9 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:simz_academy/views/screens/redirect_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-const supaBaseUrl = 'https://nsnsqbbmcjzjadfrsieo.supabase.co';
-
-const supaAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zbnNxYmJtY2p6amFkZnJzaWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjEyMTcxOTEsImV4cCI6MjAzNjc5MzE5MX0.58_-T2tUxe9lKS-k3ysPDGLEYvn7NTl7hYKUBFFk8R8';
 
 // final userId=getCurrentUserId();
 
